@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         adapter = new CustomAdapter(this);
         listView.setAdapter(adapter);
 
+        btn = (Button)findViewById(R.id.btnGetlist);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,10 +53,7 @@ public class MainActivity extends AppCompatActivity {
         LayoutInflater inflater;
 
         public CustomAdapter(Context context) {
-
             inflater = (LayoutInflater) context.getSystemService(LAYOUT_INFLATER_SERVICE);
-
-
         }
 
         @Override
@@ -106,7 +104,8 @@ public class MainActivity extends AppCompatActivity {
             protected String doInBackground(Void... params) {
                 String result = "";
                 try {
-                    result = Remote.getData("http://192.168.0.175/sub/requestJSON.jsp?skip=5");
+                    result = Remote.getData("http://192.168.0.6/sub/request.jsp");
+                    //result = Remote.getData("http://192.168.0.175/sub/requestJSON.jsp?skip=5");
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

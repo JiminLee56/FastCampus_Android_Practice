@@ -23,7 +23,7 @@ public class Remote {
 
     private static final String TAG = "remote";
     static CookieManager cookieManager = new CookieManager();
-    static final String COOKIE_URL = "http://localhost:8080";
+    static final String COOKIE_URL = "http://localhost:80";
 
     public static String getData(String webUrl) throws IOException {
         StringBuffer result = new StringBuffer();
